@@ -1,3 +1,5 @@
+import { realpathSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { loadConfig } from '../config/index.ts';
 import { evaluate } from '../eligibility/needs-outreach.ts';
@@ -50,6 +52,8 @@ export async function main(argv: string[] = process.argv.slice(2)): Promise<void
         if (delivery.kind === 'draft' || delivery.kind === 'sent' || delivery.kind === 'slack') {
           sent.add(shipment.shipmentId);
           delivered += 1;
+        } else {
+          skipped += 1;
         }
       }
     } else {
@@ -154,8 +158,16 @@ function parseCli(argv: string[]): CliOpts {
   return { source, mode, fixture: values.fixture as string | undefined };
 }
 
-const isMain = import.meta.url === `file://${process.argv[1]}`;
-if (isMain) {
+function isEntrypoint(): boolean {
+  if (!process.argv[1]) return false;
+  try {
+    return fileURLToPath(import.meta.url) === realpathSync(process.argv[1]);
+  } catch {
+    return false;
+  }
+}
+
+if (isEntrypoint()) {
   main().catch((err) => {
     // eslint-disable-next-line no-console
     console.error(err);
