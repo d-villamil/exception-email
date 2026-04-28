@@ -5,3 +5,7 @@ secrets/
 state/
 *.log
 .DS_Store
+
+# Captured real-data fixtures contain live shipment IDs/carriers/timestamps.
+# Keep local-only; the parcel-cli test skips when this is absent.
+tests/fixtures/parcel-cli.sample.json
