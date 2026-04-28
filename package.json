@@ -7,6 +7,7 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "node --test --import tsx tests/**/*.test.ts",
+    "authorize": "tsx src/gmail/authorize.ts",
     "run:dryrun": "tsx src/jobs/daily-outreach.ts --source=fixture --mode=draft"
   },
   "dependencies": {
