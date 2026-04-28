@@ -1,0 +1,59 @@
+[
+  {
+    "shipmentId": "DL5A625QTRE3239",
+    "pro": "1731092566",
+    "carrierName": "Bally",
+    "origin": "PETCO-CA-1",
+    "destination": "LAX-11",
+    "routeAllStops": ["PETCO-CA-1", "LAX-11"],
+    "deliveryDate": "2026-04-25T00:00:00.000Z",
+    "minutesLate": 47,
+    "exceptionField": null,
+    "lateEvent": "destination-arrival"
+  },
+  {
+    "shipmentId": "DLQUERN5CHD0DKQ",
+    "pro": "P-39673-2616",
+    "carrierName": "Warp",
+    "origin": "LAX-11",
+    "destination": "SAC-4",
+    "routeAllStops": ["LAX-11", "CLV-1", "SAC-4"],
+    "deliveryDate": "2026-04-25T00:00:00.000Z",
+    "minutesLate": 22,
+    "exceptionField": "",
+    "lateEvent": "origin-departure"
+  },
+  {
+    "shipmentId": "DL_HAS_EXCEPTION",
+    "pro": "9999",
+    "carrierName": "CHR",
+    "origin": "HM-IN-1",
+    "destination": "FPK-1",
+    "deliveryDate": "2026-04-25T00:00:00.000Z",
+    "minutesLate": 90,
+    "exceptionField": "traffic",
+    "lateEvent": "destination-arrival"
+  },
+  {
+    "shipmentId": "DL_BARELY_LATE",
+    "pro": "1234",
+    "carrierName": "Omni",
+    "origin": "GU-NJ-1",
+    "destination": "EWR-1",
+    "deliveryDate": "2026-04-25T00:00:00.000Z",
+    "minutesLate": 12,
+    "exceptionField": null,
+    "lateEvent": "origin-arrival"
+  },
+  {
+    "shipmentId": "DL_UNKNOWN_CARRIER",
+    "pro": "5555",
+    "carrierName": "MysteryCarrier",
+    "origin": "UNIQLO-NJ-1",
+    "destination": "EWR-1",
+    "deliveryDate": "2026-04-25T00:00:00.000Z",
+    "minutesLate": 60,
+    "exceptionField": null,
+    "lateEvent": "destination-arrival"
+  }
+]
